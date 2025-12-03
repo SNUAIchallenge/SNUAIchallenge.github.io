@@ -7,6 +7,7 @@ nav: true
 nav_order: 8
 ---
 
+아래에 
 Below we summarize some frequently asked questions (FAQ) about the GSDS Challenge. If you have any other questions, please feel free to [contact us](/GSDSchallenge2026/contact).
 
 #### 1. How can I check why my submission failed in the [leaderboard website](https://urgent-challenge.com/competitions/5)?

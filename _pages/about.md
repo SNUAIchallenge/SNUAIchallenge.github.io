@@ -18,7 +18,7 @@ bibliography: about.bib
 ---
 
 
-<img alt="introduction" src="/GSDSchallenge2026/assets/img/대회주제_소개이미지.jpg" style="max-width: 100%;"/>
+<img alt="introduction" src="/SNUAIchallenge/assets/img/대회주제_소개이미지.jpg" style="max-width: 100%;"/>
 
 <!-- <p>We can also cite <d-cite key="VoiceFixer-Liu2022"></d-cite> external publications.</p>
 

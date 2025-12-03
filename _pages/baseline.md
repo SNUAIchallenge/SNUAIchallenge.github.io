@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: page
 permalink: /baseline/
 title: Baseline
@@ -106,4 +106,4 @@ for x in "validation"; do
 done
     </d-code>
 
-The average scores will be written respectively in `${exp}/enhanced_${x}/scoring*/RESULTS.txt`.
+The average scores will be written respectively in `${exp}/enhanced_${x}/scoring*/RESULTS.txt`. -->

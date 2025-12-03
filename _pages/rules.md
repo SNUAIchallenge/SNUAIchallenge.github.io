@@ -8,391 +8,51 @@ nav_order: 4
 
 bibliography: rules.bib
 ---
+## **1. 참가 자격**
 
-1. When generating the training and validation datasets, **only** the speech, nosie, and room impulse response (RIR) corpora listed in the [`Data`](/GSDSchallenge2026/data) tab shall be used.
-    * This is to ensure a fair comparison and proper understanding of various SE approaches.
-    * The first month of the challenge will be a grace period when participants can propose additional public datasets to be included in the list. We (organizers) will reply to the requests and may update the list. Updates will be recorded in the [`Notices`](/GSDSchallenge2026/notices) tab.
-    * Although the speech enhancement model should only be trained on the listed data, we allow the use of pre-trained foundation models such as [HuBERT](https://github.com/facebookresearch/fairseq/blob/main/examples/hubert/README.md), [WavLM](https://github.com/microsoft/unilm/blob/master/wavlm/README.md), [EnCodec](https://github.com/facebookresearch/encodec), [Llama](https://llama.meta.com/llama-downloads/), and so on as long as:
-        * they are publicly available before the challenge begins
-        * and they are explicitly mentioned in the submitted system description.
-        * Note:
-            * Their parameters can be fine-tuned on the listed data.
-            * It is not allowed to fine-tune any model, be it pre-trained or not, on any extra data other than the listed data.<br/><br/>
+- 국내외 대학 학부 재학생 또는 휴학생 ※ 전공 및 학년 제한 없음 
+  단, 상금은 **국내 은행 계좌로만 입금** 가능하며, 참가 자격 관련 추가 문의는 담당자에게 문의 바랍니다.
+- 본선 평가 대상자에 대하여 재학증명서 제출 요청 예정.
 
-2. The test data should only be used for evaluation purposes. Techniques such as test-time adaptation, unsupervised domain adaptation, and self-training on the test data are not allowed for this challenge.
+## **2. 참여 규칙**
 
-3. There is no constraint on the latency or causality of the developed system in this challenge. Any type of model can be used as long as they conform to the other rules as listed in this page.
+- 개인(1인)으로만 참여 가능.
+- 동일인의 다계정 참가 등록은 금지되며, 적발 시 실격 처리.
 
-4. Registration is required to submit results to the challenge (Check the [`Leaderboard`](/GSDSchallenge2026/leaderboard) tab for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](/GSDSchallenge2026/submission) tab.
-    * Only the team name will be shown in the leaderboard, while the affiliation and team members will be kept confidential.<br/><br/>
+## **3. API, 외부 데이터 및 사전 학습 모델 관련 규칙**
 
-5. The following evaluation metrics will be calculated for evaluation.
-    
-    <style type="text/css">
-    .tg  {border:none;border-collapse:collapse;border-color:#ccc;border-spacing:0;}
-    .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
-    font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-    .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
-    font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-    .tg .tg-r2ra{background-color:#f9f9f9;border-color:inherit;text-align:left;vertical-align:middle}
-    .tg .tg-51oy{background-color:#ffffff;border-color:#000000;text-align:center;vertical-align:middle}
-    .tg .tg-rt8k{background-color:#ffffff;border-color:#000000;text-align:left;vertical-align:middle}
-    .tg .tg-uzvj{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
-    .tg .tg-g7sd{border-color:inherit;font-weight:bold;text-align:left;vertical-align:middle}
-    .tg .tg-r6l2{background-color:#ffffff;border-color:inherit;text-align:center;vertical-align:middle}
-    .tg .tg-0a7q{border-color:#000000;text-align:left;vertical-align:middle}
-    .tg .tg-xwyw{border-color:#000000;text-align:center;vertical-align:middle}
-    .tg .tg-kyy7{background-color:#f9f9f9;border-color:inherit;text-align:center;vertical-align:middle}
-    .tg .tg-d459{background-color:#f9f9f9;border-color:inherit;text-align:left;vertical-align:middle}
-    .tg .tg-ligs{background-color:#f9f9f9;border-color:inherit;text-align:center;vertical-align:middle}
-    .tg .tg-rq3n{background-color:#ffffff;border-color:inherit;text-align:center;vertical-align:middle}
-    .tg .tg-mfxt{background-color:#ffffff;border-color:inherit;text-align:left;vertical-align:middle}
-    .tg .tg-qmuc{background-color:#ffffff;border-color:inherit;text-align:left;vertical-align:middle}
-    </style>
-    <table class="tg">
-    <thead>
-    <tr>
-        <th class="tg-uzvj">Category</th>
-        <th class="tg-g7sd">Metric</th>
-        <th class="tg-uzvj">Need Reference Signals?</th>
-        <th class="tg-uzvj">Supported Sampling Frequencies</th>
-        <th class="tg-uzvj">Value Range</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td class="tg-r6l2" rowspan="2">Non-intrusive SE metrics</td>
-        <td class="tg-rt8k"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_dnsmos.py">DNSMOS</a> ↑<d-cite key="DNSMOS-Reddy2022"/></td>
-        <td class="tg-51oy">❌</td>
-        <td class="tg-51oy">16 kHz</td>
-        <td class="tg-51oy">[1, 5]</td>
-    </tr>
-    <tr>
-        <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_nisqa.py">NISQA</a> ↑<d-cite key="NISQA-Mittag2021"/></td>
-        <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
-        <td class="tg-xwyw">48 kHz</td>
-        <td class="tg-xwyw">[1, 5]</td>
-    </tr>
-    <tr>
-        <td class="tg-kyy7" rowspan="6">Intrusive SE metrics</td>
-        <td class="tg-d459"><a href="http://www.polqa.info" style="color:#e97c36;">POLQA</a><d-footnote>This metric will only be used for evaluation of the final blind test set.</d-footnote> ↑</td>
-        <td class="tg-kyy7">✔</td>
-        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">8~48 kHz</span></td>
-        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">[1, 5]</span></td>
-    </tr>
-    <tr>
-        <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">PESQ</a> ↑<d-cite key="PESQ-Rix2001"/></td>
-        <td class="tg-kyy7">✔</td>
-        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">{8, 16} kHz</span></td>
-        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">[-0.5, 4.5]</span></td>
-    </tr>
-    <tr>
-        <td class="tg-r2ra"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">ESTOI</a> ↑<d-cite key="ESTOI-Jensen2016"/></td>
-        <td class="tg-ligs">✔</td>
-        <td class="tg-ligs"><span style="font-weight:400;font-style:normal;text-decoration:none">10 kHz</span></td>
-        <td class="tg-ligs">[0, 1]</td>
-    </tr>
-    <tr>
-        <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">SDR</a> ↑<d-cite key="SDR-Vincent2006"/></td>
-        <td class="tg-kyy7">✔</td>
-        <td class="tg-kyy7">Any</td>
-        <td class="tg-kyy7">(-∞, +∞)</td>
-    </tr>
-    <tr>
-        <td class="tg-r2ra"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">MCD</a> ↓<d-cite key="MCD-Kubichek1993"/></td>
-        <td class="tg-ligs">✔</td>
-        <td class="tg-ligs">Any</td>
-        <td class="tg-ligs">[0, +∞)</td>
-    </tr>
-    <tr>
-        <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">LSD</a> ↓<d-cite key="LSD-Gray1976"/></td>
-        <td class="tg-kyy7">✔</td>
-        <td class="tg-kyy7">Any</td>
-        <td class="tg-kyy7">[0, +∞)</td>
-    </tr>
-    <tr>
-        <td class="tg-rq3n" rowspan="2">Downstream-task-independent metrics</td>
-        <td nowrap class="tg-mfxt"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_speechbert_score.py">SpeechBERTScore</a><d-footnote>Based on our preliminary investigation, we adopt the HuBERT-Base backend for calculating the SpeechBERTScore, which differs from its defalut backend (WavLM-Large).</d-footnote> ↑<d-cite key="SpeechBERTScore-Saeki2024"/></td>
-        <td class="tg-rq3n">✔</td>
-        <td class="tg-rq3n">16 kHz</td>
-        <td class="tg-rq3n">[-1, 1]</td>
-    </tr>
-    <tr>
-        <td class="tg-qmuc"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_phoneme_similarity.py">LPS</a> ↑<d-cite key="Evaluation-Pirklbauer2023"/></td>
-        <td class="tg-r6l2">✔</td>
-        <td class="tg-r6l2">16 kHz</td>
-        <td class="tg-r6l2"><span style="font-weight:400;font-style:normal;text-decoration:none">(-∞, 1]</span></td>
-    </tr>
-    <tr>
-        <td class="tg-ligs" rowspan="2">Downstream-task-dependent metrics</td>
-        <td class="tg-r2ra"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_speaker_similarity.py">SpkSim</a> ↑</td>
-        <td class="tg-ligs">✔</td>
-        <td class="tg-ligs">16 kHz</td>
-        <td class="tg-ligs">[-1, 1]</td>
-    </tr>
-    <tr>
-        <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2024_challenge/blob/main/evaluation_metrics/calculate_wer.py">WAcc</a> (=1-WER) ↑</td>
-        <td class="tg-kyy7">❌</td>
-        <td class="tg-kyy7">16 kHz</td>
-        <td class="tg-kyy7">(-∞, 1]</td>
-    </tr>
-    <tr>
-        <td class="tg-r6l2" rowspan="1">Subjective SE metrics</td>
-        <td class="tg-rt8k"><a href="https://github.com/microsoft/P.808" style="color:#e97c36;">MOS</a><d-footnote>This metric will only be used for evaluation of the final blind test set.</d-footnote> ↑</td>
-        <td class="tg-51oy">❌</td>
-        <td class="tg-51oy">Any</td>
-        <td class="tg-51oy">[1, 5]</td>
-    </tr>
-    </tbody>
-    </table><br/>
+- 사용 언어: Python
+- 학습 및 추론시 외부 상용 API (ChatGPT, Gemini, Grok 등) 사용 금지되며 모든 모델은 인터넷이 차단된 로컬 환경 (CPU 또는 GPU 기반)에서 직접 실행 가능하여야 함.
+- 오픈소스 모델 (LLAMA 등)은 활용가능하나, 2025년 10월 31일 이전까지 모델 가중치가 공개되어 있어야 함. 허용 기준을 충족하는지 확실하지 않은 경우 Kaggle 내 Discussion 탭을 통해 운영진에게 문의.
+- 모델 학습시 외부 데이터 사용은 허용되지 않으며, 제공된 학습데이터만 활용하여야 함. 학습데이터에 데이터 증강 (Data augmentation) 등을 적용하는 것은 허용됨. 단, 데이터 증강시에도 외부 상용 API를 사용하는 것은 허용되지 않음. —> discussion topic
+    - **데이터 전처리를 위해 외부 상용 API를 사용할 경우, 총 사용 금액은 3만 원을 초과할 수 없음.**
+        - 외부 API를 활용하여 시스템을 구축한 경우, 발표 자료에 해당 API의 활용 방법, 실험 결과 및 발생 비용을 명시하여야 하며, **평가 과정에서 총 구축 비용이 3만 원 이상인 것으로 판단될 경우 실격 처리될 수 있음.**
+- 모델 앙상블 금지
+- 모델 학습과 추론에서 평가 데이터셋 정보 활용 (Data Leakage)시 실격 처리 (예: 평가 데이터에 대해 수작업으로 라벨링하여 학습에 활용하는 행위. 평가 데이터의 데이터 특성을 분석해 학습 데이터 전처리, 모델 구조 설계 등에 활용하는 행위)
+- 모델 경량화 기법은 활용가능함 (Quantization, LoRA 등).
+- Chain-of-Thought, Multi-turn chat 등의 기법도 자유롭게 활용 가능.
+- 규칙을 준수하지 않을 경우 실격처리될 수 있으며, 대회 중이라도 리더보드 상위 참가자를 대상으로 재현성 검증을 요청할 수 있음.
 
-    > **Note:** For real recorded test samples that do not have a strictly matched reference signal, part of the above metrics will be used.
+## **5. 제출 규칙**
 
-6. The overall ranking will be determined via the following procedure:
-
-    1. Calculate the average score of each metric for each submission.
-    2. Calculate the per-metric ranking based on the average score.
-       * We adopt the dense ranking ("1223" ranking)<d-footnote><a href="https://en.wikipedia.org/wiki/Ranking#Dense_ranking_(%221223%22_ranking)">https://en.wikipedia.org/wiki/Ranking#Dense_ranking_(&quot;1223&quot;_ranking)</a></d-footnote> strategy for handling ties.
-    3. Calculate the `per-category ranking` by averaging the rankings within each category.
-    4. Calculate the overall ranking by averaging the `per-category rankings`.<br/><br/>
-
-    ```python
-    # Step 1: Calculate the average score of each metric
-    scores = {}
-    for submission in all_submissions:
-      scores[submission] = {}
-      for category in metric_categories:
-        for metric in category:
-          scores[submission][metric] = mean([metric(each_sample) for each_sample in submission])
-
-    # Step 2: Calculate the per-metric ranking based on the average score
-    rank_per_metric = {}
-    rank_per_category = {}
-    for category in metric_categories:
-      for metric in category:
-        rank_per_metric[metric] = get_ranking([scores[submission][metric] for submission in all_submissions])
-
-      # Step 3: Calculate the `per-category ranking` by averaging the rankings within each category
-      rank_per_category[category] = get_ranking([rank_per_metric[metric] for metric in category])
-
-    # Step 4: Calculate the overall ranking by averaging the `per-category rankings`
-    rank_overall = get_ranking([rank_per_category[category] for category in metric_categories])
-    ```
-
-    > Note: Only <u>the original test data</u>, <u>the best baseline system</u>, and <u>participant submissions</u> are taken into account in the ranking procedure.
+- 제출은 1일 3회로 제한
+- 최종 제출하는 모델은 NVIDIA RTX 3090 GPU (VRAM 24GB)를 이용하여 구동가능하여야 함.
 
 
-<details><summary>Below is an example of how we calculate the overall ranking.</summary><div>
+## **6. 평가 메트릭**
 
-<style type="text/css">
-.unselectable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  /* visibility: hidden; */
-  /* display: block; */
- }
-.tg2  {border:none;border-collapse:collapse;border-spacing:0;}
-.tg2 td{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;
-  padding:10px 5px;word-break:normal;}
-.tg2 th{border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg2 .tg2-lboi{border-color:inherit;text-align:left;vertical-align:middle}
-.tg2 .tg2-ia6h{background-color:#EFEFEF;border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
-.tg2 .tg2-gfnm{background-color:#efefef;border-color:#000000;text-align:center;vertical-align:middle}
-.tg2 .tg2-18eh{border-color:#000000;font-weight:bold;text-align:center;vertical-align:middle}
-.tg2 .tg2-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
-.tg2 .tg2-2bax{color:#fe0000;font-weight:bold;text-align:center;vertical-align:middle}
-.tg2 .tg2-wa1i{font-weight:bold;text-align:center;vertical-align:middle}
-.tg2 .tg2-qbk9{background-color:#efefef;border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
-.tg2 .tg2-g7yy{background-color:#EFEFEF;border-color:inherit;text-align:center;vertical-align:middle}
-.tg2 .tg2-1tol{border-color:#000000;font-weight:bold;text-align:left;vertical-align:middle}
-.tg2 .tg2-0a7q{border-color:#000000;text-align:left;vertical-align:middle}
-.tg2 .tg2-fsme{background-color:#efefef;border-color:inherit;text-align:center;vertical-align:middle}
-.tg2 .tg2-xwyw{border-color:#000000;text-align:center;vertical-align:middle}
-.tg2 .tg2-y0n7{background-color:#efefef;text-align:center;vertical-align:middle}
-.tg2 .tg2-nrix{text-align:center;vertical-align:middle}
-.tg2 .tg2-dbp2{color:#fe0000;text-align:center;vertical-align:middle}
-.tg2 .tg2-uzvj{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
-</style>
-<table class="tg2">
-<thead>
-  <tr>
-    <th class="tg2-1tol" colspan="2" rowspan="3">System</th>
-    <th class="tg2-18eh" colspan="11">Per-metric ranking</th>
-  </tr>
-  <tr>
-    <th class="tg2-qbk9" colspan="2">Non-intrusive SE metrics</th>
-    <th class="tg2-18eh" colspan="5">Intrusive SE metrics</th>
-    <th class="tg2-qbk9" colspan="2">Downstream-task-independent metrics</th>
-    <th class="tg2-18eh" colspan="2"><span style="font-style:normal;text-decoration:none">Downstream-task-dependent metrics</span></th>
-  </tr>
-  <tr>
-    <th nowrap class="tg2-qbk9">DNSMOS ↑</th>
-    <th nowrap class="tg2-qbk9">NISQA ↑</th>
-    <th nowrap class="tg2-18eh">PESQ ↑</th>
-    <th nowrap class="tg2-18eh">ESTOI ↑</th>
-    <th nowrap class="tg2-18eh">SDR ↑</th>
-    <th nowrap class="tg2-18eh">MCD ↓</th>
-    <th nowrap class="tg2-18eh">LSD ↓</th>
-    <th nowrap class="tg2-qbk9">SpeechBERTScore ↑</th>
-    <th nowrap class="tg2-qbk9">LPS ↑</th>
-    <th nowrap class="tg2-18eh">SpkSim ↑</th>
-    <th nowrap class="tg2-18eh">WAcc ↑</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg2-0a7q" colspan="2">Noisy input</td>
-    <td class="tg2-fsme">6</td>
-    <td class="tg2-fsme">6</td>
-    <td class="tg2-xwyw">5</td>
-    <td class="tg2-xwyw">4</td>
-    <td class="tg2-xwyw">5</td>
-    <td class="tg2-xwyw">5</td>
-    <td class="tg2-xwyw">5</td>
-    <td class="tg2-gfnm">1</td>
-    <td class="tg2-gfnm">5</td>
-    <td class="tg2-xwyw">3</td>
-    <td class="tg2-xwyw">3</td>
-  </tr>
-  <tr>
-    <td class="tg2-lboi" colspan="2">Baseline</td>
-    <td class="tg2-fsme">5</td>
-    <td class="tg2-fsme">5</td>
-    <td class="tg2-9wq8">4</td>
-    <td class="tg2-9wq8">5</td>
-    <td class="tg2-9wq8">4</td>
-    <td class="tg2-9wq8">4</td>
-    <td class="tg2-9wq8">4</td>
-    <td class="tg2-fsme">4</td>
-    <td class="tg2-fsme">4</td>
-    <td class="tg2-9wq8">5</td>
-    <td class="tg2-9wq8">4</td>
-  </tr>
-  <tr>
-    <td class="tg2-lboi" colspan="2">Submission 1</td>
-    <td class="tg2-fsme">1</td>
-    <td class="tg2-fsme">1</td>
-    <td class="tg2-9wq8">6</td>
-    <td class="tg2-9wq8">6</td>
-    <td class="tg2-9wq8">6</td>
-    <td class="tg2-9wq8">6</td>
-    <td class="tg2-9wq8">6</td>
-    <td class="tg2-fsme">6</td>
-    <td class="tg2-fsme">6</td>
-    <td class="tg2-9wq8">6</td>
-    <td class="tg2-9wq8">6</td>
-  </tr>
-  <tr>
-    <td class="tg2-lboi" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none">Submission 2</span></td>
-    <td class="tg2-fsme">4</td>
-    <td class="tg2-fsme">4</td>
-    <td class="tg2-9wq8">3</td>
-    <td class="tg2-9wq8">3</td>
-    <td class="tg2-9wq8">3</td>
-    <td class="tg2-9wq8">3</td>
-    <td class="tg2-9wq8">3</td>
-    <td class="tg2-fsme">4</td>
-    <td class="tg2-fsme">3</td>
-    <td class="tg2-9wq8">4</td>
-    <td class="tg2-9wq8">5</td>
-  </tr>
-  <tr>
-    <td class="tg2-lboi" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none">Submission 3</span></td>
-    <td class="tg2-fsme">3</td>
-    <td class="tg2-fsme">3</td>
-    <td class="tg2-9wq8">2</td>
-    <td class="tg2-9wq8">2</td>
-    <td class="tg2-9wq8">2</td>
-    <td class="tg2-9wq8">2</td>
-    <td class="tg2-9wq8">2</td>
-    <td class="tg2-fsme">1</td>
-    <td class="tg2-fsme">2</td>
-    <td class="tg2-9wq8">2</td>
-    <td class="tg2-9wq8">2</td>
-  </tr>
-  <tr>
-    <td class="tg2-lboi" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none">Submission 4</span></td>
-    <td class="tg2-fsme">2</td>
-    <td class="tg2-fsme">2</td>
-    <td class="tg2-9wq8">1</td>
-    <td class="tg2-9wq8">1</td>
-    <td class="tg2-9wq8">1</td>
-    <td class="tg2-9wq8">1</td>
-    <td class="tg2-9wq8">1</td>
-    <td class="tg2-fsme">1</td>
-    <td class="tg2-fsme">1</td>
-    <td class="tg2-9wq8">1</td>
-    <td class="tg2-9wq8">1</td>
-  </tr>
-  <tr>
-    <td class="tg2-9wq8 unselectable" colspan="12">⬇ ⬇ ⬇ ⬇ ⬇</td>
-    <td class="tg2-lboi"></td>
-  </tr>
-  <tr>
-  <th class="tg2-18eh" colspan="2"></th>
-    <th class="tg2-18eh" colspan="11">Per-category ranking</th>
-  </tr>
-  <tr>
-    <td class="tg2-1tol">System</td>
-    <td class="tg2-wa1i">Overall ranking</td>
-    <td class="tg2-y0n7" colspan="2"><span style="font-weight:700;font-style:normal;text-decoration:none">Non-intrusive SE metrics</span></td>
-    <td class="tg2-nrix" colspan="5"><span style="font-weight:700;font-style:normal;text-decoration:none">Intrusive SE metrics</span></td>
-    <td class="tg2-y0n7" colspan="2"><span style="font-weight:700;font-style:normal;text-decoration:none">Downstream-task-independent metrics</span></td>
-    <td class="tg2-nrix" colspan="2"><span style="font-weight:700;font-style:normal;text-decoration:none">Downstream-task-dependent metrics</span></td>
-  </tr>
-  <tr>
-    <td class="tg2-lboi">Noisy input</td>
-    <td class="tg2-dbp2">4.200</td>
-    <td class="tg2-g7yy" colspan="2">6.0</td>
-    <td class="tg2-9wq8" colspan="5">4.8</td>
-    <td class="tg2-g7yy" colspan="2">3.0</td>
-    <td class="tg2-9wq8" colspan="2">3.0</td>
-  </tr>
-  <tr>
-    <td class="tg2-lboi">Baseline</td>
-    <td class="tg2-dbp2">4.425</td>
-    <td class="tg2-g7yy" colspan="2">5.0</td>
-    <td class="tg2-9wq8" colspan="5">4.2</td>
-    <td class="tg2-g7yy" colspan="2">4.0</td>
-    <td class="tg2-9wq8" colspan="2">4.5</td>
-  </tr>
-  <tr>
-    <td nowrap class="tg2-lboi">Submission 1</td>
-    <td class="tg2-dbp2">4.750</td>
-    <td class="tg2-ia6h" colspan="2">1.0</td>
-    <td class="tg2-9wq8" colspan="5">6.0</td>
-    <td class="tg2-g7yy" colspan="2">6.0</td>
-    <td class="tg2-9wq8" colspan="2">6.0</td>
-  </tr>
-  <tr>
-    <td nowrap class="tg2-lboi"><span style="font-weight:400;font-style:normal;text-decoration:none">Submission 2</span></td>
-    <td class="tg2-dbp2">3.750</td>
-    <td class="tg2-g7yy" colspan="2">4.0</td>
-    <td class="tg2-9wq8" colspan="5">3.0</td>
-    <td class="tg2-g7yy" colspan="2">3.5</td>
-    <td class="tg2-9wq8" colspan="2">4.5</td>
-  </tr>
-  <tr>
-    <td nowrap class="tg2-lboi"><span style="font-weight:400;font-style:normal;text-decoration:none">Submission 3</span></td>
-    <td class="tg2-dbp2">2.125</td>
-    <td class="tg2-g7yy" colspan="2">3.0</td>
-    <td class="tg2-9wq8" colspan="5">2.0</td>
-    <td class="tg2-g7yy" colspan="2">1.5</td>
-    <td class="tg2-9wq8" colspan="2">2.0</td>
-  </tr>
-  <tr>
-    <td nowrap class="tg2-lboi"><span style="font-weight:400;font-style:normal;text-decoration:none">Submission 4</span></td>
-    <td class="tg2-2bax">1.250</td>
-    <td class="tg2-g7yy" colspan="2">2.0</td>
-    <td class="tg2-uzvj" colspan="5">1.0</td>
-    <td class="tg2-ia6h" colspan="2">1.0</td>
-    <td class="tg2-uzvj" colspan="2">1.0</td>
-  </tr>
-</tbody>
-</table>
+## **7. 코드 재현성 검증 규칙**
 
-</div></details>
+- 예선 종료 후 예선 최종 xx위 이내 참가자는 제출기한 내에 학습/추론 코드, 최종 모델 가중치 파일을 아래 규칙에 맞추어 제출할 것.
+- 코드 제출 관련 준수 사항
+    - README.md 파일을 상세히 작성하여, 운영진이 학습 및 추론 과정을 재현해 볼 수 있도록 할 것.
+    - 코드에 데이터 입/출력 경로를 상대 경로로 표기
+    - 코드와 주석 인코딩: UTF-8
+    - 모든 코드는 오류 없이 실행되어야 함(라이브러리 로딩 코드 포함)
+    - 개발 환경(OS, 하드웨어 스펙 등) 및 라이브러리 버전 기재
+    - 추론(Inference) 과정은 별도의 코드로 작성해야 하며, 추론에 활용하는 모델 가중치(Weight) 파일을 제출시 포함시킬 것.
+
+## **8. 본선 발표자료 관련**
+
+- 코드 재현성 검증을 통과한 본선 평가 대상자들을 대상으로 발표 평가를 진행함
+- 발표 자료를 기한 내에 PPT 파일 혹은 PDF 형태로 제출할 것.

@@ -8,16 +8,15 @@ nav_order: 2
 ---
 
 
-|   **Date ( Anywhere on Earth )**  |         **Event**          |
+|   **날짜 (한국시간 기준)**  |         **내용**          |
 |:---------------------------------:|:---------------------------|
-|       June 10, 2024               | **Start of the challenge** |
-|     June 10-August 10, 2024       | Grace Period for new dataset proposal from participants |
-|       June 20, 2024               | Leaderboard (validation) opens |
-|      August 19, 2024              | Release of non-blind test data |
-|      August 19, 2024              | Leaderboard (test) opens   |
-|      September 18, 2024          | Release of blind test data (for final ranking) |
-|    <del>September 20, 2024 (23:59:59)</del><br/>September 21, 2024 (23:59:59)<d-footnote>We have postponed the deadline by one day due to the laggy evaluation server.</d-footnote> | **End of the challenge**   |
-|     October 21, 2024              | Notification of final results |
+|     Dec 5 - Dec 14, 2024       | 사전 참가 신청 |
+|       **Dec 15, 2025**               | **경진대회 시작** |
+|     Dec 15, 2025 - Jan 19 11:59 PM, 2026       | 경진대회 예선 진행 (리더보드 운영) |
+|       Jan 20 - Jan 26 11:59 PM, 2026         | 리더보드 상위팀 대상 코드 검증 및 발표 자료 제출 |
+|      Jan 27 - Feb 9, 2026              | 제출 코드 검증 |
+|      Feb 10 or 11, 2026              | 본선 발표 평가   |
+|      **Feb 13, 2026**          | **최종 순위 발표 및 시상** |
 {: .table}
 {: .table-striped}
 
