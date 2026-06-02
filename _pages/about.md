@@ -26,7 +26,7 @@ bibliography: about.bib
 
 <h2 style="text-align: center; font-weight:bold; color: #0F0F70;">Overview</h2>
 ---
-서울대학교 데이터사이언스 대학원에서는 최신 인공지능 연구의 최전선에서 기존 모델의 한계를 극복하고 다양한 상황에서의 일반화 성능 향상을 위해 활발히 연구를 진행하고 있습니다. 뿐만 아니라, 이러한 연구 성과가 좀 더 확산되고, 보다 많은 사람들이 인공지능 연구에 관심을 가질 수 있도록 하는 데에도 많은 노력을 기울이고 있습니다. 이러한 노력의 일환으로 **저희 대학원에서 자체적으로 가공한 데이터를 공개하여 국내외 대학 학부생들이 최신 인공지능 모델을 직접 개발해보고 성능을 겨루어 볼 수 있는 경연의 장을 마련하였습니다.**
+[서울대학교 데이터사이언스 대학원](https://gsds.snu.ac.kr)에서는 최신 인공지능 연구의 최전선에서 기존 모델의 한계를 극복하고 다양한 상황에서의 일반화 성능 향상을 위해 활발히 연구를 진행하고 있습니다. 뿐만 아니라, 이러한 연구 성과가 좀 더 확산되고, 보다 많은 사람들이 인공지능 연구에 관심을 가질 수 있도록 하는 데에도 많은 노력을 기울이고 있습니다. 이러한 노력의 일환으로 **저희 대학원에서 자체적으로 가공한 데이터를 공개하여 국내외 대학 학부생들이 최신 인공지능 모델을 직접 개발해보고 성능을 겨루어 볼 수 있는 경연의 장을 마련하였습니다.**
 <br>
 <br>
 
@@ -186,7 +186,7 @@ bibliography: about.bib
 <br>
 <h2 style="text-align: center; font-weight:bold; color: #0F0F70;">Evaluation</h2>
 ---
-예선 순위는 **Exact Match Accuracy**를 기준으로 결정됩니다.  제출한 이미지 순서가 정답 순서와 완전히 동일한 경우에만 정답으로 인정되며, 순서가 하나라도 다를 경우 오답으로 처리되며 별도의 부분 점수는 부여하지 않습니다. 예를 들어 정답이 [0,3,1,2]일 때, [0,3,1,2]만 정답으로 처리되며 그 외의 모든 순서는 오답으로 간주됩니다.
+예선 순위는 **Exact Match Accuracy**를 기준으로 결정됩니다.  제출한 이미지 순서가 정답 순서와 완전히 동일한 경우에만 정답으로 인정되며, 순서가 하나라도 다를 경우 오답으로 처리되며 별도의 부분 점수는 부여하지 않습니다. 예를 들어 정답이 [1, 4, 2, 3]일 때, [1, 4, 2, 3]만 정답으로 처리되며 그 외의 모든 순서는 오답으로 간주됩니다.
 
 <br>
 <br>
@@ -200,17 +200,24 @@ bibliography: about.bib
   </div>
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">서울대학교<br>데이터사이언스 대학원</div>
-    <img alt="GSDS 로고" src="/assets/img/GSDS로고_2.png" style="height: 70px; max-width: 100%;"/>
+    <a href="https://gsds.snu.ac.kr" target="_blank" rel="noopener noreferrer">
+      <img alt="GSDS 로고" src="/assets/img/GSDS로고_2.png" style="height: 70px; max-width: 100%;"/>
+    </a>
   </div>  
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; margin-top: 8px;">  
   <div style="grid-column: 1 / 3; text-align: center; font-weight: 700;">후원사</div>  
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">(주) 모레</div>
-    <img alt="(주) 모레 로고" src="/assets/img/Moreh_Logo.png" style="height: 50px; max-width: 100%;"/>
+    
+    <a href="https://moreh.io/" target="_blank" rel="noopener noreferrer">
+      <img alt="(주) 모레 로고" src="/assets/img/Moreh_Logo.png" style="height: 50px; max-width: 100%;"/>
+    </a>
   </div>
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">(주) 모티프테크놀로지스</div>
-    <img alt="(주) 모티프테크놀로지스 로고" src="/assets/img/Motif_Logo.png" style="height: 70px; max-width: 100%;"/>
+    <a href="https://motiftech.io/ko/" target="_blank" rel="noopener noreferrer">
+      <img alt="(주) 모티프테크놀로지스 로고" src="/assets/img/Motif_Logo.png" style="height: 70px; max-width: 100%;"/>
+    </a>
   </div>
 </div>
