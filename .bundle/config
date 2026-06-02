@@ -1,0 +1,2 @@
+---
+BUNDLE_BUILD__MINI_RACER: "--with-v8-dir=/usr"
