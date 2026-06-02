@@ -10,14 +10,15 @@ nav_order: 2
 
 |   **날짜 (한국시간 기준)**  |         **내용**          |
 |:---------------------------------:|:---------------------------|
-|     Apr 27 - May 10       | 사전 참가 신청(<a href="https://docs.google.com/forms/d/e/1FAIpQLSfzSdRWGh44565LfczrNQHd3rekcOkCuH-2vWBr5dPgZoNHJg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">링크</a>) |
-|       **May 11**               | **경진대회 시작** |
-|     May 11 - June 30       | 경진대회 예선 진행 (제출 가능 기간) <br> ※ **참가신청 종료: May 31** |
-|       Jul 2         | 최종 리더보드 공개 (Public + Private data) |
-|       Jul 2 - Jul 4         | 리더보드 상위팀 대상: **검증용 코드, 발표 자료 및 보고서 제출** |
-|      Jul 13              | 본선 진출 대상자 발표  |
-|      **Jul 15**              | **본선 발표 평가**  |
-|      **7월 중**            | **본선 발표 종료 후 최종 순위 발표 및 시상** |
+|     June 15 - July 17       | 참가 신청 (<a href="https://docs.google.com/forms/d/e/1FAIpQLSfzSdRWGh44565LfczrNQHd3rekcOkCuH-2vWBr5dPgZoNHJg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">링크</a>) |
+|       **June 29**               | **경진대회 시작** |
+|     June 29 - July 24       | 경진대회 예선 진행 (제출 가능 기간) <br> ※ **참가신청 종료: July 17** |
+|       July 25         | 최종 리더보드 공개 (Public + Private data) |
+|       July 25 - July 28         | 리더보드 상위팀 대상: **검증용 코드및 보고서 제출** |
+|      **Aug 3**              | **본선 진출 대상자 발표**  |
+|      **Aug 6**              | 본선 **발표 자료 제출 마감**  |
+|      **Aug 7**              | **본선 발표 평가**  |
+|      **8월 말**            | **최종 순위 발표 및 시상** |
 {: .table}
 {: .table-striped}
 {: .table-hover}
