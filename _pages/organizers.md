@@ -14,17 +14,18 @@ nav_order: 10
 
 
 ### Core Members
-1. 김수민 (박사과정, VIP 연구실)
-2. 곽수지 (박사과정, Ski-ML 연구실)
-3. <a style="color: #2E67D3;" href="https://keondopark.github.io/">박건도</a> (박사과정, AIoT 연구실) 
-4. <a style="color: #2E67D3;" href="https://edw2n.github.io/"> 백은수 </a> (박사과정, AIoT 연구실) 
-5. 송무호 (박사과정, Ski-ML 연구실) 
-6. 안성근 (박사과정, Ski-ML 연구실)
-7. 여주안 (박사과정, LAAL 연구실)
-8. 유지환 (박사과정, LAAL 연구실)
-9. 정예준 (박사과정, Ski-ML 연구실)
-10. 정혜민 (박사과정, VIP 연구실)
-11. 최현제 (박사과정, Ski-ML 연구실)
+1. 강민구 (박사과정, VIP 연구실)
+2. 김수민 (박사과정, VIP 연구실)
+3. 곽수지 (박사과정, Ski-ML 연구실)
+4. <a style="color: #2E67D3;" href="https://keondopark.github.io/">박건도</a> (박사과정, AIoT 연구실) 
+5. <a style="color: #2E67D3;" href="https://edw2n.github.io/"> 백은수 </a> (박사과정, AIoT 연구실) 
+6. 송무호 (박사과정, Ski-ML 연구실) 
+7. 안성근 (박사과정, Ski-ML 연구실)
+8. 여주안 (박사과정, LAAL 연구실)
+9. 유지환 (박사과정, LAAL 연구실)
+10. 정예준 (박사과정, Ski-ML 연구실)
+11. 정혜민 (박사과정, VIP 연구실)
+12. 최현제 (박사과정, Ski-ML 연구실)
 
 ### Advisory members
 1. <a style="color: #2E67D3;" href="https://www.snu-laal.com/">김태섭</a> 교수 (LAAL 연구실)
