@@ -183,16 +183,16 @@ bibliography: about.bib
 ※ 단, 상금은 **국내 은행 계좌로만 입금** 가능하며, 참가 자격 관련 추가 문의는 담당자에게 문의 바랍니다.
 
 
-<br>
+<!-- <br>
 <h2 style="text-align: center; font-weight:bold; color: #0F0F70;">Evaluation</h2>
 ---
-예선 순위는 **Exact Match Accuracy**를 기준으로 결정됩니다.  제출한 이미지 순서가 정답 순서와 완전히 동일한 경우에만 정답으로 인정되며, 순서가 하나라도 다를 경우 오답으로 처리되며 별도의 부분 점수는 부여하지 않습니다. 예를 들어 정답이 [1, 4, 2, 3]일 때, [1, 4, 2, 3]만 정답으로 처리되며 그 외의 모든 순서는 오답으로 간주됩니다.
-
+예선 순위는 **Exact Match Accuracy**를 기준으로 결정됩니다.  제출한 이미지 순서가 정답 순서와 완전히 동일한 경우에만 정답으로 인정되며, 순서가 하나라도 다를 경우 오답으로 처리되며 별도의 부분 점수는 부여하지 않습니다. 예를 들어 정답이 [1, 4, 2, 3]일 때, [1, 4, 2, 3]만 정답으로 처리되며 그 외의 모든 순서는 오답으로 간주됩니다. -->
+---
 <br>
 <br>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; margin-top: 8px;">
-  <div style="text-align: center; font-weight: 700;">주최</div>
-  <div style="text-align: center; font-weight: 700;">주관</div>
+  <div style="text-align: center; font-weight: 700; font-size: 1.25rem;">주최</div>
+  <div style="text-align: center; font-weight: 700; font-size: 1.25rem;">주관</div>
 
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">서울대학교</div>
@@ -206,7 +206,7 @@ bibliography: about.bib
   </div>  
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; margin-top: 8px;">  
-  <div style="grid-column: 1 / 3; text-align: center; font-weight: 700;">후원사</div>  
+  <div style="grid-column: 1 / 3; text-align: center; font-weight: 700; font-size: 1.25rem;">후원</div>  
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">(주) 모레</div>
     
@@ -219,5 +219,11 @@ bibliography: about.bib
     <a href="https://motiftech.io/ko/" target="_blank" rel="noopener noreferrer">
       <img alt="(주) 모티프테크놀로지스 로고" src="/assets/img/Motif_Logo.png" style="height: 70px; max-width: 100%;"/>
     </a>
+  </div>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; margin-top: 8px;">
+  <!-- <div style="text-align: center; font-weight: 700; font-size: 1.25rem;">BK21</div> -->
+  <div style="text-align: center;">
+    <img alt="BK21 로고" src="/assets/img/BK21_로고.png" style="height: 70px; max-width: 100%;"/>
   </div>
 </div>
