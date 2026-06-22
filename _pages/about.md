@@ -196,7 +196,7 @@ bibliography: about.bib
 
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">서울대학교</div>
-    <img alt="GSDS 로고" src="/assets/img/서울대로고.png" style="height: 70px; max-width: 100%;"/>
+    <img alt="서울대 로고" src="/assets/img/서울대로고.png" style="height: 70px; max-width: 100%;"/>
   </div>
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">서울대학교<br>데이터사이언스 대학원</div>
@@ -205,11 +205,13 @@ bibliography: about.bib
     </a>
   </div>  
 </div>
+
+---
+
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; margin-top: 8px;">  
   <div style="grid-column: 1 / 3; text-align: center; font-weight: 700; font-size: 1.25rem;">후원</div>  
   <div style="text-align: center;">
-    <div style="font-weight: 700; margin-bottom: 8px;">(주) 모레</div>
-    
+    <div style="font-weight: 700; margin-bottom: 8px;">(주) 모레</div>    
     <a href="https://moreh.io/" target="_blank" rel="noopener noreferrer">
       <img alt="(주) 모레 로고" src="/assets/img/Moreh_Logo.png" style="height: 50px; max-width: 100%;"/>
     </a>
@@ -221,9 +223,19 @@ bibliography: about.bib
     </a>
   </div>
 </div>
-<div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; margin-top: 8px;">
-  <!-- <div style="text-align: center; font-weight: 700; font-size: 1.25rem;">BK21</div> -->
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; margin-top: 8px;">
   <div style="text-align: center;">
+    <div style="font-weight: 700; margin-bottom: 8px;">ERC</div>    
+    <a href="https://champ.snu.ac.kr/?lang=ko" target="_blank" rel="noopener noreferrer">
+      <img alt="ERC 로고" src="/assets/img/ERC로고_CHAIMP.png" style="height: 70px; max-width: 100%;"/>
+    </a>
+  </div>
+  <div style="text-align: center;">
+  <div style="font-weight: 700; margin-bottom: 8px;">BK 21</div>    
     <img alt="BK21 로고" src="/assets/img/BK21_로고.png" style="height: 70px; max-width: 100%;"/>
   </div>
 </div>
+
+
+
+

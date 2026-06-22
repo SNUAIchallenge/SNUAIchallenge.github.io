@@ -55,7 +55,7 @@ nav_order: 10
 ### Core Members
 <div class="organizers-grid">
 	<div class="organizer-card">
-		<img alt="강민구 프로필 사진" src="/assets/img/profiles/강민구.jpg"/>
+		<img alt="강민구 프로필 사진" src="/assets/img/profiles/강민구.png"/>
 		<div class="organizer-name">강민구</div>
 	</div>
 	<div class="organizer-card">

@@ -35,3 +35,7 @@ bibliography: data.bib
 <!-- <img alt="data" src="/assets/img/문제예시4_new_넘버링.jpg" style="max-width: 100%;"/> -->
 
 <img alt="data" src="/assets/img/문제예시3_activitynet.jpg" style="max-width: 100%;"/>
+
+
+### **3. 데이터 액세스 및 사용**
+본 데이터는 경진대회 참여 목적 외 다른 목적으로의 활용을 제한하며, 본 데이터의 원본 또는 수정본을 재배포하는 행위 또한 금지됩니다.

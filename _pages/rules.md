@@ -61,7 +61,7 @@ bibliography: rules.bib
 
 ### **4. 제출 규칙**
 
-- 제출은 **1일 3회**로 제한.
+- 제출은 **1일 2회**로 제한.
 - 최종 제출 모델은 **NVIDIA RTX 3090 GPU(VRAM 24GB)** 1개를 이용하여 실행 가능해야 함.
 - 서버 사양 상세 
     - CPU: AMD EPYC 7502 32-Core Processor x 2
