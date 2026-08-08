@@ -1,0 +1,198 @@
+<!-- Homepage popup announcing the event Gallery (included only on the home page). -->
+<style>
+  #gp-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 15, 112, 0.45);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  #gp-overlay.gp-show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #gp-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    transform: translateY(16px) scale(0.98);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+  #gp-overlay.gp-show #gp-card {
+    transform: translateY(0) scale(1);
+  }
+  #gp-hero {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #f4f6fb;
+  }
+  #gp-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 20px;
+    line-height: 34px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease;
+  }
+  #gp-close:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  #gp-body {
+    padding: 22px 24px 20px;
+    text-align: center;
+  }
+  #gp-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #2B50AA;
+    background: rgba(43, 80, 170, 0.1);
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin-bottom: 12px;
+  }
+  #gp-title {
+    margin: 0 0 8px;
+    font-size: 21px;
+    font-weight: 800;
+    color: #0F0F70;
+    line-height: 1.35;
+  }
+  #gp-desc {
+    margin: 0 0 18px;
+    font-size: 14.5px;
+    color: #555;
+    line-height: 1.6;
+  }
+  #gp-cta {
+    display: block;
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 12px;
+    background: #2B50AA;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 15.5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  #gp-cta:hover {
+    background: #0F0F70;
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  #gp-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+  }
+  #gp-foot button {
+    border: none;
+    background: none;
+    color: #8a8f9c;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px 2px;
+    transition: color 0.2s ease;
+  }
+  #gp-foot button:hover {
+    color: #555;
+    text-decoration: underline;
+  }
+</style>
+
+<div id="gp-overlay" role="dialog" aria-modal="true" aria-labelledby="gp-title" aria-hidden="true">
+  <div id="gp-card">
+    <button id="gp-close" type="button" aria-label="닫기">&times;</button>
+    <img id="gp-hero" src="{{ '/assets/img/gallery/thumb/IMG_0837.jpg' | relative_url }}" alt="2026 SNU AI Challenge 본선 현장">
+    <div id="gp-body">
+      <span id="gp-badge">📸 NEW</span>
+      <h3 id="gp-title">본선 현장 스케치 공개!</h3>
+      <p id="gp-desc">2026 SNU AI Challenge 본선 현장의 생생한 순간들을<br>갤러리에서 만나보세요.</p>
+      <a id="gp-cta" href="{{ '/gallery/' | relative_url }}">갤러리 보러가기 &rarr;</a>
+      <div id="gp-foot">
+        <button id="gp-hide-today" type="button">오늘 하루 그만 보기</button>
+        <button id="gp-later" type="button">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var KEY = "snuaic_gallery_popup_hide";
+    var overlay = document.getElementById("gp-overlay");
+    if (!overlay) return;
+
+    function today() {
+      var d = new Date();
+      return "" + d.getFullYear() +
+        ("0" + (d.getMonth() + 1)).slice(-2) +
+        ("0" + d.getDate()).slice(-2);
+    }
+    function stored() {
+      try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    }
+
+    // Already dismissed for today -> never show.
+    if (stored() === today()) return;
+
+    function open() {
+      overlay.classList.add("gp-show");
+      overlay.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      overlay.classList.remove("gp-show");
+      overlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+    function hideToday() {
+      try { localStorage.setItem(KEY, today()); } catch (e) {}
+      close();
+    }
+
+    document.getElementById("gp-close").addEventListener("click", close);
+    document.getElementById("gp-later").addEventListener("click", close);
+    document.getElementById("gp-hide-today").addEventListener("click", hideToday);
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" || e.keyCode === 27) close();
+    });
+
+    // Show shortly after load so the entrance transition plays.
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", function () { setTimeout(open, 400); });
+    } else {
+      setTimeout(open, 400);
+    }
+  })();
+</script>

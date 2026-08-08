@@ -25,3 +25,6 @@ check_shellcheck*
 # page server related
 _site/
 Gemfile.lock
+
+# full-resolution event photo originals (web-optimized copies live in assets/img/gallery/)
+/images/

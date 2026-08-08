@@ -16,6 +16,7 @@ social: false  # includes social icons at the bottom of the page
 
 bibliography: about.bib
 ---
+{% include gallery_popup.html %}
 <img alt="introduction" src="/assets/img/로고 최종본_컬러-투명 배경.png" style="max-width: 20%; display: block; margin: 0 auto;"/>
 <h2 style="text-align: center; font-weight: 800; color: #0F0F70;">텍스트로 풀어보는 장면의 재구성</h2>
 <h4 style="text-align: center; font-weight: bold; color: #555555;">미션: 단서를 활용해 4장의 이미지를 재구성하라</h4>
