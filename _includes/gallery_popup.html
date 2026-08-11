@@ -88,6 +88,12 @@
     color: #555;
     line-height: 1.6;
   }
+  #gp-divider {
+    width: 100%;
+    height: 1px;
+    margin: 18px 0 16px;
+    background: linear-gradient(90deg, transparent, rgba(15, 15, 112, 0.22), transparent);
+  }
   #gp-cta {
     display: block;
     width: 100%;
@@ -132,8 +138,16 @@
     <button id="gp-close" type="button" aria-label="닫기">&times;</button>
     <img id="gp-hero" src="{{ '/assets/img/gallery/thumb/IMG_0837.jpg' | relative_url }}" alt="2026 SNU AI Challenge 본선 현장">
     <div id="gp-body">
+        <h3 id="gp-title">🏆 최종 수상팀</h3>      
+      <p id="gp-desc">2026 SNU AI Challenge의 최종 수상팀은 아래와 같이 결정되었습니다. 수상팀 분들 축하드립니다!</p>
+      <p style="font-size: 18px; text-align: center;">대상: <strong>Deepest</strong></p>
+      <p style="font-size: 16px; text-align: center;">금상: <strong>김수민딥기시쁠</strong></p>
+      <p style="font-size: 16px; text-align: center;">은상: <strong>말랑복쯍아</strong></p>
+      <p style="font-size: 16px; text-align: center;">동상: <strong>You reached your current quota</strong></p>
+      <p style="font-size: 16px; text-align: center;">장려상: <strong>강해린, 유빈종강기념개강파티, HYperBall</strong></p>
+        <div id="gp-divider" aria-hidden="true"></div>
       <span id="gp-badge">📸 NEW</span>
-      <h3 id="gp-title">본선 현장 스케치 공개!</h3>
+      <h3 id="gp-title">본선 현장 스케치 공개!</h3>      
       <p id="gp-desc">2026 SNU AI Challenge 본선 현장의 생생한 순간들을<br>갤러리에서 만나보세요.</p>
       <a id="gp-cta" href="{{ '/gallery/' | relative_url }}">갤러리 보러가기 &rarr;</a>
       <div id="gp-foot">
