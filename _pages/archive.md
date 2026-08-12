@@ -271,7 +271,7 @@ nav_order: 5.5
           <td style="border-left: 0; border-right: 0; padding: 8px; text-align: center;">순서채움</td>
           <td style="border-left: 0; border-right: 0; padding: 8px; text-align: center;">-</td>
           <td style="border-left: 0; border-right: 0; padding: 8px; text-align: center;">-</td>
-          <td style="border-left: 0; border-right: 0; padding: 8px; text-align: center;"><a href="/assets/reports/%EC%B4%88%EC%BD%94%EC%86%A1%EC%9D%B4.pdf" target="_blank" rel="noopener noreferrer">Report</a></td>
+          <td style="border-left: 0; border-right: 0; padding: 8px; text-align: center;"><a href="/assets/reports/%EC%88%9C%EC%84%9C%EC%B1%84%EC%9B%80.pdf" target="_blank" rel="noopener noreferrer">Report</a></td>
         </tr>
     </tbody>
   </table>
